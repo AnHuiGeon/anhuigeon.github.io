@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-pages-index-js-e2e5d9414af74521e19e.js","mappings":"oJAUA,UARkB,WAChB,OACE","sources":["webpack://anhuigeon.github.io/./src/pages/index.js"],"sourcesContent":["import * as React from \"react\"\n\nconst IndexPage = () => {\n  return (\n    <div>\n      index.js\n    </div>\n  )\n}\n\nexport default IndexPage\n"],"names":[],"sourceRoot":""}
