@@ -1,27 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import SideBar from './sideBar';
 import GlobalContextProvider from '../context/GlobalContextProvider';
 import GlobalStyle from '../styles/globalStyle';
 import styledTheme from '../styles/styledTheme';
 import Toggle from './toggle';
+import themeHook from '../hooks/themeHook';
 
 const Layout = ({ children }) => {
-    // const [theme, setTheme] = useState(typeof window.__theme !== 'undefined' ? window.__theme : window.matchMedia('(prefers-color-scheme: dark)')?'dark':'light')
-    const [theme, setTheme] = useState(null)
-    useEffect(() => {
-        if(typeof window !== 'undefined'){
-            setTheme(window.__theme)
-        }
-    }, [])
-    console.log('layout.js > theme:',theme)
+    const [theme, themeHookCallback] = themeHook();
 
     return(
         <ThemeProvider theme={ styledTheme }>
-            <GlobalContextProvider.Provider value={ [theme, setTheme] }>
+            <GlobalContextProvider.Provider value={ theme }>
                 <GlobalStyle />
                 <Container>
-                    <Toggle />
+                    <Toggle themeHookCallback = { themeHookCallback } />
                     <SideBar />
                     <div>themeLayout.js</div>
                     <div>themeLayout.js</div>

@@ -1,31 +1,23 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components';
 import GlobalContextProvider from '../context/GlobalContextProvider';
 
-const Toggle = () => {
-    const [theme, setTheme] = useContext(GlobalContextProvider);
-    const colorHandler = ({target}) => {
-        if(target.checked){
-            setTheme('dark')
-        }else{
-            setTheme('light')
-        }
-        window.__setPreferredTheme(theme)
-    }
+const Toggle = ({ themeHookCallback }) => {
+    const theme = useContext(GlobalContextProvider);
+    const [check, setCheck] = useState(false)
     useEffect(() => {
-        if (theme === 'dark') {
-            document.body.className = 'dark';
-        } else {
-            document.body.className = 'light';
+        if(theme == 'dark'){
+            setCheck(true)
+        }else{
+            setCheck(false)
         }
-        window.__setPreferredTheme(theme)
-    }, [theme]);
+    }, [theme])
 
     return(
         <Switch>
           <ChildInput
-          defaultChecked={theme === 'dark' ? true:false}
-          onChange={(e) => colorHandler(e)}
+          checked= {check}
+          onChange={themeHookCallback}
           />
           <ChildSpan />
         </Switch>
@@ -82,36 +74,3 @@ const ChildInput = styled.input.attrs({ type: 'checkbox' })`
     }
 `;
 export default Toggle;
-
-
-    /* 세이브 ======================================= 포인트 */
-    // const [preferColor, setPreferColor] = useState(true);
-    // const colorHandler = ({target}) => {
-    //     if (target.checked == false && preferColor == true) {
-    //         setPreferColor(true);
-    //     } else {
-    //         setPreferColor(false);
-    //     }
-    //     console.log('핸들러 이벤트 실행됨:',preferColor)
-    // };
-    // useEffect(() => {
-    //     if (preferColor == 'dark') {
-    //         document.documentElement.classList.add('dark');
-    //         console.log('useEffect거쳐서 class변환 > if', preferColor)
-    //     } else {
-    //         document.documentElement.classList.remove('dark');
-    //         console.log('useEffect거쳐서 class변환 > if', preferColor)
-    //     }
-    //     console.log('useEffect거쳐서 class변환', preferColor)
-    // }, [preferColor]);
-    // useEffect(() => {
-    //     console.log('단한번만 실행:',preferColor)
-    //     setPreferColor(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-    //     console.log('effect > preferColor:', preferColor)
-    //     if (preferColor == 'dark') {
-    //         document.documentElement.classList.add('dark');
-    //     } else {
-    //         document.documentElement.classList.remove('dark');
-    //     }
-    // }, [])
-    /* 세이브 ======================================= 포인트 */
