@@ -1,27 +1,24 @@
 import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components';
 import GlobalContextProvider from '../context/GlobalContextProvider';
-// import React, { useEffect, useState } from 'react'
 
 const Toggle = () => {
     const [theme, setTheme] = useContext(GlobalContextProvider);
     const colorHandler = ({target}) => {
         if(target.checked){
             setTheme('dark')
-            localStorage.setItem('theme','dark')
         }else{
             setTheme('light')
-            localStorage.setItem('theme','light')
         }
+        window.__setPreferredTheme(theme)
     }
     useEffect(() => {
         if (theme === 'dark') {
-            document.documentElement.classList.remove('light');
-            document.documentElement.classList.add('dark');
+            document.body.className = 'dark';
         } else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
+            document.body.className = 'light';
         }
+        window.__setPreferredTheme(theme)
     }, [theme]);
 
     return(

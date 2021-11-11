@@ -7,7 +7,8 @@ import styledTheme from '../styles/styledTheme';
 import Toggle from './toggle';
 
 const Layout = ({ children }) => {
-    const [theme, setTheme] = useState(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+    const [theme, setTheme] = useState(typeof window.__theme !== 'undefined' ? window.__theme : window.matchMedia('(prefers-color-scheme: dark)')?'dark':'light')
+    console.log('layout.js > theme:',theme)
 
     return(
         <ThemeProvider theme={ styledTheme }>
