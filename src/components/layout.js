@@ -8,7 +8,12 @@ import Toggle from './toggle';
 
 const Layout = ({ children }) => {
     // const [theme, setTheme] = useState(typeof window.__theme !== 'undefined' ? window.__theme : window.matchMedia('(prefers-color-scheme: dark)')?'dark':'light')
-    const [theme, setTheme] = useState(window.__theme)
+    const [theme, setTheme] = useState(null)
+    useEffect(() => {
+        if(typeof window !== 'undefined'){
+            setTheme(window.__theme)
+        }
+    }, [])
     console.log('layout.js > theme:',theme)
 
     return(
