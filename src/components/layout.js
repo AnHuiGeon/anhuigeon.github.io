@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import SideBar from './sideBar';
 import GlobalContextProvider from '../context/GlobalContextProvider';
@@ -7,7 +7,8 @@ import styledTheme from '../styles/styledTheme';
 import Toggle from './toggle';
 
 const Layout = ({ children }) => {
-    const [theme, setTheme] = useState(typeof window.__theme !== 'undefined' ? window.__theme : window.matchMedia('(prefers-color-scheme: dark)')?'dark':'light')
+    // const [theme, setTheme] = useState(typeof window.__theme !== 'undefined' ? window.__theme : window.matchMedia('(prefers-color-scheme: dark)')?'dark':'light')
+    const [theme, setTheme] = useState(window.__theme)
     console.log('layout.js > theme:',theme)
 
     return(
