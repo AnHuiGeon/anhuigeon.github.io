@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkanhuigeon_github_io=self.webpackChunkanhuigeon_github_io||[]).push([[678],{7704:function(e,n,u){u.r(n);var i=u(7294);n.default=function(){return i.createElement("div",null,"index.js")}}}]);
-//# sourceMappingURL=component---src-pages-index-js-e2e5d9414af74521e19e.js.map
