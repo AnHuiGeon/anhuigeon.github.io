@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from 'styled-components';
 // import { Link } from 'gatsby';
 
-const SideBar = ({ }) => {
+const SideBar = () => {
   // 모바일/태블릿환경 스크롤 이동 감지로 header에 이벤트 주입/제거
   const [isScrolled, setIsScrolled] = useState(false);
   const headerListener = () => {

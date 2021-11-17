@@ -8,8 +8,11 @@ const Toggle = ({ themeHookCallback }) => {
 	return (
 		<Switch>
 			<ChildInput
-				checked={theme === 'dark' ? true : false}
-				onChange={themeHookCallback}
+				checked={theme === 'dark'}
+				onChange={e => window.__setPreferredTheme(
+					e.target.checked?'dark':'light'
+				)}
+				// onChange={themeHookCallback}
 			/>
 			<ChildSpan />
 		</Switch>

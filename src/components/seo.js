@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ meta, description, lang, title }) {
+function Seo({ meta, description, lang, title }) {
 	const { site } = useStaticQuery(
 		graphql`
 			query {
@@ -20,7 +20,7 @@ function SEO({ meta, description, lang, title }) {
 	)
 
 	const metaDescription = description || site.siteMetadata.description
-	console.log('metaDescription:',metaDescription)
+
 	return (
 		<Helmet
 			htmlAttributes={{
@@ -65,20 +65,20 @@ function SEO({ meta, description, lang, title }) {
 	)
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
 	lang: `ko`,
 	meta: [],
 	description: ``,
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
 	description: PropTypes.string,
 	lang: PropTypes.string,
 	meta: PropTypes.arrayOf(PropTypes.object),
 	title: PropTypes.string.isRequired,
 }
 
-export default SEO
+export default Seo
 
 // https://www.gatsbyjs.com/docs/add-seo-component/
     // SEO 구성 요소 추가, gatsby-config.js, SEO 구성 요소

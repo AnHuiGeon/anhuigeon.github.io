@@ -1,17 +1,18 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
+import PostList from "../components/postList";
 // import styled from "styled-components";
 
 const IndexPage = ({ data }) => {
   console.log('data:',data)
   return (
     <Layout>
-      <SEO
+      <Seo
       title={data.site.siteMetadata.title}
       />
-      <div>index</div>
+      <PostList />
     </Layout>
   )
 }

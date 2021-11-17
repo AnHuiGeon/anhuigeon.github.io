@@ -1,11 +1,13 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import SideBar from './sideBar';
 import GlobalContextProvider from '../context/GlobalContextProvider';
 import GlobalStyle from '../styles/globalStyle';
 import styledTheme from '../styles/styledTheme';
-import Toggle from './toggle';
 import themeHook from '../hooks/themeHook';
+
+import SideBar from './sideBar';
+import Toggle from './toggle';
+import Footer from './footer';
 
 const Layout = ({ children }) => {
 	const [theme, themeHookCallback] = themeHook();
@@ -17,141 +19,21 @@ const Layout = ({ children }) => {
 				<Container>
 					<Toggle themeHookCallback={themeHookCallback} />
 					<SideBar />
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
-					<div>themeLayout.js</div>
 					{children}
 				</Container>
-				<Footer role="contentinfo">
-					<Copyright aria-label="Copyright">
-						<div>thisiscopyright</div>
-					</Copyright>
-				</Footer>
+				<Footer />
 			</GlobalContextProvider.Provider>
 		</ThemeProvider>
 	);
 };
 
 const Container = styled.div`
-	width: 100%;
+	margin: 0 auto;
+	max-width: 1680px;
 	height: 100%;
 	min-height: calc(100vh - var(--footer-height));
 	background-color: var(--color-post-background);
 `;
+// mobile : 가로320 세로480, tablet: 가로768 세로1024, desktop: 1680
 
-const Footer = styled.footer`
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	align-items: center;
-	height: var(--footer-height);
-	background-color: var(--color-post-background);
-`;
-
-const Copyright = styled.span`
-	color: var(--color-gray-6);
-`;
 export default Layout
