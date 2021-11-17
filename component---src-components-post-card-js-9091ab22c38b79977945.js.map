@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-components-post-card-js-9091ab22c38b79977945.js","mappings":"mJAQA,UANiB,WACf,OACE","sources":["webpack://anhuigeon.github.io/./src/components/postCard.js"],"sourcesContent":["import React from \"react\";\n\nconst PostCard = () => {\n  return (\n    <div>postCard.js</div>\n  )\n}\n\nexport default PostCard"],"names":[],"sourceRoot":""}
