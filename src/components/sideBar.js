@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from 'styled-components';
-// import { Link } from 'gatsby';
+import { Link } from 'gatsby';
+
+import Face from '../images/huigeon.jpg'
 
 const SideBar = () => {
   // 모바일/태블릿환경 스크롤 이동 감지로 header에 이벤트 주입/제거
@@ -15,7 +17,7 @@ const SideBar = () => {
     }
   }, [isScrolled]);
 
-  // hamburger 체크 감지로 scroll lock
+  // checkbox 체크 감지로 scroll lock
   const [menuState, setMenuState] = useState(false);
   const menuCheckHandler = ({target}) => {
     console.log('hamburger.target.checked:',target.checked)
@@ -43,18 +45,48 @@ const SideBar = () => {
       </HamburgerLabel>
       <SideMenu>
         <div>sidebar.js : Aside</div>
+        <About>
+          <CoverAuthorImage>
+            <Link to="/">
+              <Img src={Face} alt={'undefined'}/>
+            </Link>
+          </CoverAuthorImage>
+        </About>
       </SideMenu>
     </>
   )
 }
-
+const About = styled.div`
+  text-align: center;
+  max-width: 480px;
+  margin: 10px auto auto;
+`;
+const CoverAuthorImage = styled.div`
+  max-width: 150px;
+  max-height: 150px;
+  margin: 0 auto 10px;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: var(--color-post-background);
+`;
+const Img = styled.img`
+  max-width: 150px;
+  max-height: 150px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.35s;
+  &:hover {
+    transform: scale3d(0.90,0.90,1);
+  }
+`;
 const SideHeader = styled.header`
   width: 100%;
   height: 50px;
   line-height: 50px;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 5;
   opacity: 0.85;
   transition: .5s ease-out;
   text-align: center;
@@ -69,10 +101,12 @@ const SideHeader = styled.header`
   }
   // @media (max-width: ${({ theme }) => theme.device.sm}) {
   //   padding: 0 var(--padding-sm);
-  }
+  // }
 `;
 const SideMenu = styled.aside`
-  left: -125%;
+  // left: -125%;
+  transform: translateX(-125%);
+  top: 0;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -80,6 +114,7 @@ const SideMenu = styled.aside`
   width: 100%;
   height: 100%;
   padding: 10px;
+  padding-top: 50px;
   background-color: var(--color-post-background);
   box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
   z-index: 1;
@@ -111,7 +146,7 @@ const HamburgerLabel = styled.label.attrs({ htmlFor: 'menuicon' })`
   position: fixed;
   top: 10px;
   left: 10px;
-  z-index: 3;
+  z-index: 5;
   cursor: pointer;
 `;
 const HamburgerInput = styled.input.attrs({ type: 'checkbox', id: 'menuicon' })`
@@ -133,7 +168,8 @@ const HamburgerInput = styled.input.attrs({ type: 'checkbox', id: 'menuicon' })`
         }
       }
       +${SideMenu}{
-        left: 0;
+        // left: 0;
+        transform: translateX(0);
       }
     }
   }

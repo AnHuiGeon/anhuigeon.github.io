@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components';
 import GlobalContextProvider from '../context/GlobalContextProvider';
 
-const Toggle = ({ themeHookCallback }) => {
+const Toggle = () => {
 	const theme = useContext(GlobalContextProvider);
 
 	return (
@@ -12,7 +12,6 @@ const Toggle = ({ themeHookCallback }) => {
 				onChange={e => window.__setPreferredTheme(
 					e.target.checked?'dark':'light'
 				)}
-				// onChange={themeHookCallback}
 			/>
 			<ChildSpan />
 		</Switch>
@@ -43,7 +42,7 @@ const ChildSpan = styled.span`
 `;
 const Switch = styled.label`
 	position: fixed;
-	z-index: 2;
+	z-index: 10;
 	top: 15px;
 	right: 20px;
 	display: block;

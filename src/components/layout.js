@@ -10,14 +10,14 @@ import Toggle from './toggle';
 import Footer from './footer';
 
 const Layout = ({ children }) => {
-	const [theme, themeHookCallback] = themeHook();
+	const [theme] = themeHook();
 
 	return (
 		<ThemeProvider theme={styledTheme}>
 			<GlobalContextProvider.Provider value={theme}>
 				<GlobalStyle />
 				<Container>
-					<Toggle themeHookCallback={themeHookCallback} />
+					<Toggle />
 					<SideBar />
 					{children}
 				</Container>
