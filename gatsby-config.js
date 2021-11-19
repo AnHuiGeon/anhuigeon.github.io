@@ -34,14 +34,6 @@ module.exports = {
         trackingId: "G-7PSDS3S4B7",
       },
     },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "pages",
-    //     path: "./src/pages/",
-    //   },
-    //   __key: "pages",
-    // },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-remark",

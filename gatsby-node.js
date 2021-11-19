@@ -38,7 +38,7 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create postCard pages.
+    // Create posts pages.
     const posts = result.data.allMarkdownRemark.edges
 
     posts.forEach((post, index) => {
@@ -56,7 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
-    // Create postList pages
+    // Create post list pages
     const postsPerPage = 10
     const numPages = Math.ceil(posts.length / postsPerPage)
 
