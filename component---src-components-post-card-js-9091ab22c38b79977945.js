@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkanhuigeon_github_io=self.webpackChunkanhuigeon_github_io||[]).push([[49],{1863:function(e,n,u){u.r(n);var t=u(7294);n.default=function(){return t.createElement("div",null,"postCard.js")}}}]);
-//# sourceMappingURL=component---src-components-post-card-js-9091ab22c38b79977945.js.map
