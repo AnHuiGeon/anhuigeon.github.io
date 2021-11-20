@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components';
-import GlobalContextProvider from '../context/GlobalContextProvider';
+import GlobalContextProvider from '../../context/GlobalContextProvider';
 
 const Toggle = () => {
 	const theme = useContext(GlobalContextProvider);

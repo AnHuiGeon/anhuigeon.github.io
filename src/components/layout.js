@@ -5,11 +5,12 @@ import GlobalStyle from '../styles/globalStyle';
 import styledTheme from '../styles/styledTheme';
 import themeHook from '../hooks/themeHook';
 
-import SideBar from './sideBar';
-import Toggle from './toggle';
+import Header from './headers/header';
+import Side from './side';
+import Toggle from './headers/toggle';
 import Footer from './footer';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, data }) => {
 	const [theme] = themeHook();
 
 	return (
@@ -17,8 +18,9 @@ const Layout = ({ children }) => {
 			<GlobalContextProvider.Provider value={theme}>
 				<GlobalStyle />
 				<Container>
+					<Header />
 					<Toggle />
-					<SideBar />
+					<Side data={data}/>
 					{children}
 				</Container>
 				<Footer />
