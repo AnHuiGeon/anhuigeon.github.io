@@ -6,7 +6,6 @@ import PostList from "../components/postList";
 // import styled from "styled-components";
 
 const IndexPage = ({ data }) => {
-  console.log('data:',data)
   return (
     <Layout data={data}>
       <Seo

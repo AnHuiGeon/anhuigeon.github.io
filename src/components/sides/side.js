@@ -1,13 +1,14 @@
-import React from "react";
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import HamburgerToggle from './hamburgerToggle';
-// import hamburgerHook from '../../hooks/hamburgerHook';
+import React from "react"
+import styled from 'styled-components'
+import { Link } from 'gatsby'
+import HamburgerToggle from './hamburgerToggle'
+import Category from "./category"
 
-import Face from '../../images/huigeon.jpg';
+import Face from '../../images/huigeon.jpg'
 
 const Side = ({ data }) => {
-  const siteMetadata = data.site.siteMetadata;
+  const siteMetadata = data.site.siteMetadata
+
   return (
     <>
       <HamburgerToggle />
@@ -21,6 +22,7 @@ const Side = ({ data }) => {
           </CoverAuthorImage>
           <AuthorName>{siteMetadata.author}</AuthorName>
           <Description>{siteMetadata.description}</Description>
+          <Category data={data} />
         </About>
       </SideMenu>
     </>
@@ -39,18 +41,6 @@ const AuthorName = styled.div`
   text-transform: uppercase;
   color: $dark;
   font-weight: 700;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    display: block;
-    width: 7px;
-    height: 7px;
-    border-radius: 100%;
-    background-color: $body-color;
-  }
 `;
 const About = styled.div`
   text-align: center;

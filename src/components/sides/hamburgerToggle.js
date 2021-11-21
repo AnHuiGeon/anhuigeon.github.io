@@ -1,28 +1,13 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import hamburgerHook from '../../hooks/hamburgerHook';
+import React from 'react'
+import styled from 'styled-components'
+import hamburgerHook from '../../hooks/hamburgerHook'
 
 const HamburgerToggle = () => {
   // checkbox 체크 감지로 scroll lock
-  const [hamburger, setHamburger] = hamburgerHook();
+  const [setHamburger] = hamburgerHook()
   const menuCheckHandler = ({target}) => {
     setHamburger(target.checked)
   }
-  useEffect(() => {
-    const scrollOverflow = document.getElementsByTagName('body')[0];
-    const asideOverflow = document.getElementsByTagName('aside')[0];
-    if (hamburger) {
-      scrollOverflow.style.overflow = 'hidden';
-      asideOverflow.style.transform = "translateX(0px)"
-      asideOverflow.style.webkitTransform = "translateX(0px)"
-      asideOverflow.style.msTransform = "translateX(0px)"
-    } else {
-      scrollOverflow.style.overflow = 'visible';
-      asideOverflow.style.transform = "translateX(-125%)"
-      asideOverflow.style.webkitTransform = "translateX(-125%)"
-      asideOverflow.style.msTransform = "translateX(-125%)"
-    }
-  }, [hamburger]);
   return (
     <>
     <HamburgerInput
