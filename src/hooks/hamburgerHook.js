@@ -1,4 +1,4 @@
-import {useCallback, useState} from "react";
+import { useState } from "react";
 
 const HamburgerHook = () => {
   const [hamburger, setHamburger] = useState(false)

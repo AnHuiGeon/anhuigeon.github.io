@@ -6,7 +6,7 @@ import styledTheme from '../styles/styledTheme';
 import themeHook from '../hooks/themeHook';
 
 import Header from './headers/header';
-import Side from './side';
+import Side from './sides/side';
 import Toggle from './headers/toggle';
 import Footer from './footer';
 

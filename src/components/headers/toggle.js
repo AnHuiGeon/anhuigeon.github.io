@@ -40,7 +40,7 @@ const ChildSpan = styled.span`
 		border-radius: 50%;
 	}
 `;
-const Switch = styled.label`
+const Switch = styled.label.attrs({ htmlFor: 'toggleTag'})`
 	position: fixed;
 	z-index: 10;
 	top: 15px;
@@ -49,7 +49,7 @@ const Switch = styled.label`
 	width: 50px;
 	height: 25px;
 `;
-const ChildInput = styled.input.attrs({ type: 'checkbox' })`
+const ChildInput = styled.input.attrs({ type: 'checkbox', id: 'toggleTag' })`
 	opacity: 0;
 	width: 0;
 	height: 0;
