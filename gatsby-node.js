@@ -7,8 +7,8 @@ exports.createPages = ({ graphql, actions }) => {
 
   const blogPost = path.resolve(`./src/components/postCard.js`)
 
-  return graphql(
-    `{
+return graphql(
+`{
   allMarkdownRemark(
     sort: {fields: [frontmatter___date], order: DESC}
     limit: 1000
@@ -38,7 +38,7 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create posts pages.
+    // posts pages.
     const posts = result.data.allMarkdownRemark.edges
 
     posts.forEach((post, index) => {
@@ -56,7 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
-    // Create post list pages
+    // post list pages
     const postsPerPage = 10
     const numPages = Math.ceil(posts.length / postsPerPage)
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { kebabCase } from 'lodash'
+import styled from 'styled-components'
 
 const Category = ({ data }) => {
   const categoriesData = data.categoriesGroup.group
@@ -13,7 +14,7 @@ const Category = ({ data }) => {
       <section>
         <ul>
           {categoriesData.map((categorydata) => (
-            <li key={categorydata.fieldValue}>
+            <List key={categorydata.fieldValue}>
               {urlPathName === categorydata.fieldValue
                 ?<Link
                 style={{fontWeight: "900", textDecoration: 'none'}}
@@ -28,9 +29,9 @@ const Category = ({ data }) => {
                   {categorydata.fieldValue} ({categorydata.totalCount})
                 </Link>
               }
-            </li>
+            </List>
           ))}
-          <li>
+          <List>
             {urlPathName === "tags"
             ?<Link
             style={{fontWeight: "900", textDecoration: 'none'}}
@@ -44,11 +45,14 @@ const Category = ({ data }) => {
               AllTags ({tagsData.length})
             </Link>
             }
-          </li>
+          </List>
         </ul>
       </section>
     </article>
   )
 }
 
+const List = styled.li`
+  list-style: none;
+`;
 export default Category
