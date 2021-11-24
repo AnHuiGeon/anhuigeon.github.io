@@ -7,14 +7,10 @@ const HamburgerHook = () => {
     const asideOverflow = document.getElementsByTagName('aside')[0]
     if (hamburger) {
       scrollOverflow.style.overflow = 'hidden';
-      asideOverflow.style.transform = "translateX(0px)"
-      asideOverflow.style.webkitTransform = "translateX(0px)"
-      asideOverflow.style.msTransform = "translateX(0px)"
+      asideOverflow.className += ' hamburgerClicked';
     } else {
       scrollOverflow.style.overflow = 'visible';
-      asideOverflow.style.transform = "translateX(-125%)"
-      asideOverflow.style.webkitTransform = "translateX(-125%)"
-      asideOverflow.style.msTransform = "translateX(-125%)"
+      asideOverflow.classList.remove('hamburgerClicked');
     }
   }, [hamburger]);
   return [setHamburger]

@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import PostList from "../components/postList";
-// import styled from "styled-components";
 
 const IndexPage = ({ data }) => {
   return (

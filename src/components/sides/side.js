@@ -1,8 +1,8 @@
 import React from "react"
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import HamburgerToggle from './hamburgerToggle'
 import Category from "./category"
+import { device } from "../../styles/device"
 
 import Face from '../../images/huigeon.jpg'
 
@@ -11,9 +11,7 @@ const Side = ({ data }) => {
 
   return (
     <>
-      <HamburgerToggle />
       <SideMenu>
-        <div>sidebar.js : Aside</div>
         <About>
           <CoverAuthorImage>
             <Link to='/'>
@@ -67,73 +65,35 @@ const Img = styled.img`
   }
 `;
 const SideMenu = styled.aside`
-  transform: translateX(-125%);
+  min-height: 100%;
   top: 0;
-  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
-  height: 100%;
   padding: 10px;
   padding-top: 50px;
   background-color: var(--color-post-background);
   box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
   z-index: 1;
-  transition: all .35s;
+  transition: all .85s;
+  @media ${device.desktop}{
+    transform: translateX(0);
+    width: 300px;
+    transition: all .0s;
+  }
+  @media ${device.laptop}{
+  }
+  @media ${device.tablet}{
+    transform: translateX(-125%);
+    width: 100%;
+    position: fixed;
+    transition: all .85s;
+    &.hamburgerClicked{
+      transform: translateX(0);
+    }
+  }
+  @media ${device.mobile}{
+  }
 `;
-// const HamburgerSpan = styled.span`
-//   display: block;
-//   position: absolute;
-//   width: 100%;
-//   height: 5px;
-//   border-radius: 10px;
-//   background: var(--color-text);
-//   transition: all .35s;
-//   &:nth-child(1){
-//     top: 0;
-//   }
-//   &:nth-child(2){
-//     top: 50%;
-//     transform: translateY(-50%);
-//   }
-//   &:nth-child(3){
-//     bottom: 0;
-//   }
-// `;
-// const HamburgerLabel = styled.label.attrs({ htmlFor: 'menuicon' })`
-//   display: block;
-//   width: 30px;
-//   height: 30px;
-//   position: fixed;
-//   top: 10px;
-//   left: 10px;
-//   z-index: 5;
-//   cursor: pointer;
-// `;
-// const HamburgerInput = styled.input.attrs({ type: 'checkbox', id: 'menuicon' })`
-//   display: none;
-//   &:checked{
-//     z-index: 2;
-//     +${HamburgerLabel}{
-//       ${HamburgerSpan}{
-//         &:nth-child(1){
-//           top: 50%;
-//           transform: translateY(-50%) rotate(225deg);
-//         }
-//         &:nth-child(2){
-//           opacity: 0;
-//         }
-//         &:nth-child(3){
-//           bottom: 50%;
-//           transform: translateY(50%) rotate(-225deg);
-//         }
-//       }
-//       +${SideMenu}{
-//         // left: 0;
-//         transform: translateX(0);
-//       }
-//     }
-//   }
-// `;
+
 export default Side

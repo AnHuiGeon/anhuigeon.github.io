@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
+import HamburgerToggle from "./hamburgerToggle";
+import { device } from "../../styles/device";
 
 const Header = () => {
   // 모바일/태블릿환경 스크롤 이동 감지로 header에 이벤트 주입/제거
@@ -15,6 +17,7 @@ const Header = () => {
   }, [isScrolled]);
   return (
     <HeadBar className={isScrolled ? "scrolled" : undefined} aria-label="Global Navigation">
+      <HamburgerToggle />
       <div>header.js : HeadBar</div>
     </HeadBar>)
 }
@@ -38,9 +41,18 @@ const HeadBar = styled.header`
     box-shadow: 0 4px 4px rgba(31, 35, 46, .15);
     transition: box-shadow .5s ease-in;
   }
-  // @media (max-width: ${({ theme }) => theme.device.sm}) {
-  //   padding: 0 var(--padding-sm);
-  // }
+  @media ${device.desktop}{
+    display: none;
+  }
+  @media ${device.laptop}{
+    display: none;
+  }
+  @media ${device.tablet}{
+    display: block;
+  }
+  @media ${device.mobile}{
+    display: block;
+  }
 `;
 
 export default Header

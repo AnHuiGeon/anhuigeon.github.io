@@ -8,12 +8,6 @@ const GlobalStyle = createGlobalStyle`
         --min-width: 320px;
         --nav-height: 50px;
         --footer-height: 60px;
-
-        --device-xs-max-width: 450px;
-        --device-sm-max-width: 768px;
-        --device-md-max-width: 1024px;
-        --device-lg-max-width: 1441px;
-
     }
     .light {
         --color-text: #1d1d1d;
