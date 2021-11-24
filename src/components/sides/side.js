@@ -66,6 +66,7 @@ const Img = styled.img`
 `;
 const SideMenu = styled.aside`
   min-height: 100%;
+  width: 300px;
   top: 0;
   display: flex;
   flex-direction: column;
@@ -78,7 +79,6 @@ const SideMenu = styled.aside`
   transition: all .85s;
   @media ${device.desktop}{
     transform: translateX(0);
-    width: 300px;
     transition: all .0s;
   }
   @media ${device.laptop}{
