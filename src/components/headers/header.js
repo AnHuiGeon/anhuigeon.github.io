@@ -23,6 +23,7 @@ const Header = () => {
 }
 
 const HeadBar = styled.header`
+  display: none;
   width: 100%;
   height: 50px;
   line-height: 50px;
@@ -45,13 +46,11 @@ const HeadBar = styled.header`
     display: none;
   }
   @media ${device.laptop}{
-    display: none;
   }
   @media ${device.tablet}{
     display: block;
   }
   @media ${device.mobile}{
-    display: block;
   }
 `;
 
