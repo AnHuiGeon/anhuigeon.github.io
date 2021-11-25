@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const ScrollNavigation = ({data}) => {
-  const limit = document.body.offsetHeight - window.innerHeight
+  const limit = 0
   useEffect(() => {
-    console.log(data, `/`, limit)
-  }, [data])
+    limit = document.body.offsetHeight - window.innerHeight
+  }, [])
   return(
     <>
       <ProgressBar>
