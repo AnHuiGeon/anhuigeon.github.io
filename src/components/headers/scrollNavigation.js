@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const ScrollNavigation = ({data}) => {
-  const limit = 0
+  const [limit, setLimit] = useState(0)
   useEffect(() => {
-    limit = document.body.offsetHeight - window.innerHeight
+    setLimit(document.body.offsetHeight - window.innerHeight)
+    console.log('limit:',limit)
   }, [])
   return(
     <>

@@ -4,9 +4,9 @@ import PostCard from "./postCard";
 
 const PostList = ({data}) => {
   return (
-    <>
+    <div>
       <PostCard />
-    </>
+    </div>
   )
 }
 
