@@ -2,12 +2,13 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import HamburgerToggle from "./hamburgerToggle";
 import { device } from "../../styles/device";
+import ScrollNavigation from "./scrollNavigation";
 
 const Header = () => {
   // 모바일/태블릿환경 스크롤 이동 감지로 header에 이벤트 주입/제거
   const [isScrolled, setIsScrolled] = useState(false);
   const headerListener = () => {
-    setIsScrolled(window.pageYOffset > 0);
+    setIsScrolled(window.pageYOffset);
   };
   useEffect(() => {
     window.addEventListener("scroll", headerListener);
@@ -16,10 +17,14 @@ const Header = () => {
     }
   }, [isScrolled]);
   return (
-    <HeadBar className={isScrolled ? "scrolled" : undefined} aria-label="Global Navigation">
-      <HamburgerToggle />
-      <div>header.js : HeadBar</div>
-    </HeadBar>)
+    <>
+      <ScrollNavigation data={isScrolled}/>
+      <HeadBar className={isScrolled > 0 ? "scrolled" : undefined} aria-label="Global Navigation">
+        <HamburgerToggle />
+        <div>header.js : HeadBar</div>
+      </HeadBar>
+    </>
+    )
 }
 
 const HeadBar = styled.header`

@@ -66,7 +66,7 @@ const Img = styled.img`
 `;
 const SideMenu = styled.aside`
   min-height: 100%;
-  width: 300px;
+  width: 250px;
   top: 0;
   display: flex;
   flex-direction: column;
