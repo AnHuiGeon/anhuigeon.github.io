@@ -6,7 +6,7 @@ import ScrollNavigation from "./scrollNavigation";
 
 const Header = () => {
   // 모바일/태블릿환경 스크롤 이동 감지로 header에 이벤트 주입/제거
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(0);
   const headerListener = () => {
     setIsScrolled(window.pageYOffset);
   };

@@ -5,12 +5,11 @@ const ScrollNavigation = ({data}) => {
   const [limit, setLimit] = useState(0)
   useEffect(() => {
     setLimit(document.body.offsetHeight - window.innerHeight)
-    console.log('limit:',limit)
   }, [])
   return(
     <>
       <ProgressBar>
-        <ScrollPosition value = {(data/limit)*100}/>
+        <ScrollPosition width={isNaN(data/limit)?0:(data/limit)*100}/>
       </ProgressBar>
     </>
   )
@@ -20,7 +19,7 @@ const ScrollPosition = styled.div`
   height: 4px;
   background-color: var(--color-text);
   position: fixed;
-  width: ${props => props.value}%;
+  width: ${props => `${props.width}%`};
   z-index: 1;
 `;
 const ProgressBar = styled.div`

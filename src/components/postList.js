@@ -2,7 +2,7 @@ import React from "react";
 import PostCard from "./postCard";
 // import { graphql } from "gatsby";
 
-const PostList = ({data}) => {
+const PostList = () => {
   return (
     <div>
       <PostCard />
