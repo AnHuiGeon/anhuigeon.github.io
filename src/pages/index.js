@@ -2,15 +2,14 @@ import * as React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
-import PostList from "../components/postList";
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ children, data }) => {
   return (
     <Layout data={data}>
       <Seo
       title={data.site.siteMetadata.title}
       />
-      <PostList />
+      {children}
     </Layout>
   )
 }

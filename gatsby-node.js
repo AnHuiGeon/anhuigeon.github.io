@@ -5,8 +5,6 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/components/postCard.js`)
-
 return graphql(
 `{
   allMarkdownRemark(
@@ -47,7 +45,7 @@ return graphql(
 
       createPage({
         path: `/${_.kebabCase(post.node.frontmatter.categories)}`+post.node.fields.slug,
-        component: blogPost,
+        component: path.resolve('./src/pages/index.js'),
         context: {
           slug: post.node.fields.slug,
           previous,
