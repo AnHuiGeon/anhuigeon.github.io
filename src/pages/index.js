@@ -1,18 +1,19 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby";
-import Seo from "../components/seo";
+import { Helmet } from "react-helmet";
 
 const IndexPage = ({ children, data }) => {
+  console.log('index.js data:',data)
   return (
     <Layout data={data}>
-      <Seo
-      title={data.site.siteMetadata.title}
-      />
+      <Helmet />
       {children}
     </Layout>
   )
 }
+
+export default IndexPage
 
 export const pageQuery = graphql`
 query {
@@ -44,5 +45,3 @@ query {
   }
 }
 `
-
-export default IndexPage

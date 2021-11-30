@@ -45,7 +45,7 @@ return graphql(
 
       createPage({
         path: `/${_.kebabCase(post.node.frontmatter.categories)}`+post.node.fields.slug,
-        component: path.resolve('./src/pages/index.js'),
+        component: path.resolve('./src/pages/blogPost.js'),
         context: {
           slug: post.node.fields.slug,
           previous,
@@ -68,6 +68,25 @@ return graphql(
           numPages,
           currentPage: i + 1,
         },
+      })
+    })
+
+    // create Categories pages
+    let categories = [];
+    _.each(posts, edge => {
+      if (_.get(edge, 'node.frontmatter.categories')) {
+        categories = categories.concat(edge.node.frontmatter.categories);
+      }
+    });
+    categories = _.uniq(categories);
+    // Make categories pages
+    categories.forEach(category => {
+      createPage({
+        path: `/${_.kebabCase(category)}/`,
+        component: path.resolve('./src/pages/categoryList.js'),
+        context: {
+          category,
+        }
       })
     })
   });
