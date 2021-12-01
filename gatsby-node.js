@@ -45,7 +45,7 @@ return graphql(
 
       createPage({
         path: `/${_.kebabCase(post.node.frontmatter.categories)}`+post.node.fields.slug,
-        component: path.resolve('./src/pages/blogPost.js'),
+        component: path.resolve('./src/templates/blogPost.js'),
         context: {
           slug: post.node.fields.slug,
           previous,
@@ -61,7 +61,7 @@ return graphql(
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/` : `/${i + 1}`,
-        component: path.resolve("./src/pages/blogList.js"),
+        component: path.resolve("./src/templates/blogList.js"),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
@@ -83,7 +83,7 @@ return graphql(
     categories.forEach(category => {
       createPage({
         path: `/${_.kebabCase(category)}/`,
-        component: path.resolve('./src/pages/categoryList.js'),
+        component: path.resolve('./src/templates/categoryList.js'),
         context: {
           category,
         }

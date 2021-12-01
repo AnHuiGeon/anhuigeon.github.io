@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 
 import Seo from "../components/seo"
 import IndexPage from "./index";
+import PostList from "../components/posts/postList";
 
 const CategoryList = ({ pageContext, data }) => {
   console.log('categoryList data:',data)
@@ -10,7 +11,7 @@ const CategoryList = ({ pageContext, data }) => {
   return (
     <IndexPage>
       <Seo title={data.site.siteMetadata.title}/>
-      <div>CategoryList</div>
+      <PostList allData={data.allMarkdownRemark.edges} pageContext={pageContext} />
     </IndexPage>
   )
 }

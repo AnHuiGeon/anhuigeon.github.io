@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 
 import Seo from "../components/seo"
 import IndexPage from "./index";
+import PostList from "../components/posts/postList";
 
 const BlogListTemplate = ({pageContext, data}) => {
   console.log('blogList data:',data)
@@ -10,7 +11,7 @@ const BlogListTemplate = ({pageContext, data}) => {
   return (
     <IndexPage>
       <Seo title={data.site.siteMetadata.title}/>
-      <div>BlogListTemplate</div>
+      <PostList allData={data.allMarkdownRemark.edges} pageContext={pageContext} />
     </IndexPage>
   )
 }
@@ -35,7 +36,6 @@ query blogPageQuery($skip: Int, $limit: Int) {
         fields {
           slug
         }
-        timeToRead
         frontmatter {
           date(formatString: "YYYY, MMM DD")
           title

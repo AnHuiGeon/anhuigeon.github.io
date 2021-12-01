@@ -9,6 +9,7 @@ const IndexPage = ({ children }) =>  (
     query SiteTitleQuery {
       site {
         siteMetadata {
+          title
           author
           description
           social {
@@ -35,20 +36,11 @@ const IndexPage = ({ children }) =>  (
   `}
   render={data => (
     <Layout data={data}>
-      <Helmet/>
+      <Helmet title={data.site.siteMetadata.title}/>
       {children}
     </Layout>
   )}
   />
 )
-// {
-//   console.log('index.js data:',data)
-//   return (
-//     <Layout data={data}>
-//       <Helmet />
-//       {children}
-//     </Layout>
-//   )
-// }
 
 export default IndexPage
