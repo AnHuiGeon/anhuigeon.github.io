@@ -8,8 +8,8 @@ const BlogPostTemplate = ({pageContext, data}) => {
   console.log('blogPost data:',data)
   console.log('blogPost pageContext:',pageContext)
   return (
-    <IndexPage data={data}>
-      <Seo/>
+    <IndexPage>
+      <Seo title={data.site.siteMetadata.title}/>
       <div>BlogPostTemplate</div>
     </IndexPage>
   )
@@ -18,7 +18,7 @@ const BlogPostTemplate = ({pageContext, data}) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String) {
     site {
       siteMetadata {
         title

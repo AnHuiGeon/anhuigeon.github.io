@@ -8,8 +8,8 @@ const BlogListTemplate = ({pageContext, data}) => {
   console.log('blogList data:',data)
   console.log('blogList pageContext:',pageContext)
   return (
-    <IndexPage data={data}>
-      <Seo/>
+    <IndexPage>
+      <Seo title={data.site.siteMetadata.title}/>
       <div>BlogListTemplate</div>
     </IndexPage>
   )
@@ -18,31 +18,37 @@ const BlogListTemplate = ({pageContext, data}) => {
 export default BlogListTemplate
 
 export const pageQuery = graphql`
-query {
+query blogPageQuery($skip: Int, $limit: Int) {
   site {
     siteMetadata {
       title
-      author
-      description
-      social {
-        twitter
-        facebook
-        linkedin
-        github
-        instagram
-        email
+    }
+  }
+  allMarkdownRemark(
+    sort: { fields: [frontmatter___date], order: DESC }
+    limit: $limit
+    skip: $skip
+  ) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        timeToRead
+        frontmatter {
+          date(formatString: "YYYY, MMM DD")
+          title
+          categories
+          img {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED,
+                layout: FULL_WIDTH,
+                formats: [AUTO, AVIF, WEBP])
+            }
+          }
+        }
       }
-    }
-  }
-  tagsGroup: allMarkdownRemark {
-    group(field: frontmatter___tags) {
-      totalCount
-    }
-  }
-  categoriesGroup: allMarkdownRemark {
-    group(field: frontmatter___categories) {
-      fieldValue
-      totalCount
     }
   }
 }

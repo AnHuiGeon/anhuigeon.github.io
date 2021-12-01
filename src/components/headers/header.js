@@ -3,6 +3,7 @@ import styled from "styled-components";
 import HamburgerToggle from "./hamburgerToggle";
 import { device } from "../../styles/device";
 import ScrollNavigation from "./scrollNavigation";
+import { Link } from "gatsby";
 
 const Header = () => {
   // 모바일/태블릿환경 스크롤 이동 감지로 header에 이벤트 주입/제거
@@ -21,7 +22,7 @@ const Header = () => {
       <ScrollNavigation data={isScrolled}/>
       <HeadBar className={isScrolled > 0 ? "scrolled" : undefined} aria-label="Global Navigation">
         <HamburgerToggle />
-        <div>header.js : HeadBar</div>
+        <Link to='/'>header.js : HeadBar</Link>
       </HeadBar>
     </>
     )
