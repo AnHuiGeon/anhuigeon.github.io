@@ -1,5 +1,5 @@
 {
-    "componentChunkName": "component---src-pages-category-list-js",
+    "componentChunkName": "component---src-templates-category-list-js",
     "path": "/reactjs/",
     "result": {"data":{"site":{"siteMetadata":{"title":"blog | HuiGeon An"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"excerpt":"You’ll find this post in your content/blog directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the…","fields":{"slug":"/welcome-to-gatsby/"},"timeToRead":1,"frontmatter":{"date":"April 06, 2017","title":"Welcome to Gatsby!","categories":"reactjs","img":null}}}]}},"pageContext":{"category":"reactjs"}},
-    "staticQueryHashes": ["1015643575","764694655"]}
+    "staticQueryHashes": ["2397019667","764694655"]}
