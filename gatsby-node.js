@@ -61,7 +61,7 @@ return graphql(
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/` : `/${i + 1}`,
-        component: path.resolve("./src/components/postList.js"),
+        component: path.resolve("./src/pages/blogList.js"),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
