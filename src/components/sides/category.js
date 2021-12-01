@@ -4,7 +4,6 @@ import { kebabCase } from 'lodash'
 import styled from 'styled-components'
 
 const Category = ({ data }) => {
-  console.log('category.js data:',data)
   const categoriesData = data.categoriesGroup.group
   const tagsData = data.tagsGroup.group
   let pathname = typeof window !== "undefined" ? window.location.pathname : ""

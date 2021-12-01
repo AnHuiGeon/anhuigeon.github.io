@@ -7,7 +7,6 @@ import { device } from "../../styles/device"
 import Face from '../../images/huigeon.jpg'
 
 const Side = ({ data }) => {
-  console.log('side.js data:',data)
   const siteMetadata = data.site.siteMetadata
 
   return (

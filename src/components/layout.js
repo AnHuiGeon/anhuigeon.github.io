@@ -11,7 +11,6 @@ import Footer from './footer';
 import { device } from '../styles/device';
 
 const Layout = ({ children, data }) => {
-	console.log('layout.js data:',data)
 	const [theme] = themeHook();
 
 	return (
