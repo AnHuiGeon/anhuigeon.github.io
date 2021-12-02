@@ -5,8 +5,6 @@ import Seo from "../components/seo"
 import IndexPage from "./index";
 
 const BlogPostTemplate = ({pageContext, data}) => {
-  console.log('blogPost data:',data)
-  console.log('blogPost pageContext:',pageContext)
   return (
     <IndexPage>
       <Seo title={data.site.siteMetadata.title}/>

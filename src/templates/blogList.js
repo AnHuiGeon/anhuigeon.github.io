@@ -6,8 +6,6 @@ import IndexPage from "./index";
 import PostList from "../components/posts/postList";
 
 const BlogListTemplate = ({pageContext, data}) => {
-  console.log('blogList data:',data)
-  console.log('blogList pageContext:',pageContext)
   return (
     <IndexPage>
       <Seo title={data.site.siteMetadata.title}/>

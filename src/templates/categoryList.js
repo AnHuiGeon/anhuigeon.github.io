@@ -6,8 +6,6 @@ import IndexPage from "./index";
 import PostList from "../components/posts/postList";
 
 const CategoryList = ({ pageContext, data }) => {
-  console.log('categoryList data:',data)
-  console.log('categoryList pageContext:', pageContext)
   return (
     <IndexPage>
       <Seo title={data.site.siteMetadata.title}/>
