@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkanhuigeon_github_io=self.webpackChunkanhuigeon_github_io||[]).push([[989],{7332:function(e,t,a){a.r(t);var n=a(7294),i=a(6179),l=a(9122);t.default=function(e){e.pageContext;var t=e.data;return n.createElement(l.Z,null,n.createElement(i.Z,{title:t.site.siteMetadata.title}),n.createElement("div",null,"BlogPostTemplate"))}}}]);
-//# sourceMappingURL=component---src-templates-blog-post-js-b74651ef669d45a1afee.js.map
