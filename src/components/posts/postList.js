@@ -2,8 +2,13 @@ import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 
+import { device } from "../../styles/device";
+
+import noImage from '../../images/huigeon.jpg'
+
 const PostList = ({allData, pageContext}) => {
   console.log('postList.js allData:', allData)
+  console.log('postList.js pageContext:', pageContext)
   return (
     <Container>
       {allData.map(({ node }) => {
@@ -14,19 +19,20 @@ const PostList = ({allData, pageContext}) => {
             >
               {node.frontmatter.img &&
                 node.frontmatter.img.childImageSharp &&
-                node.frontmatter.img.childImageSharp.gatsbyImageData && (
-              // <StyledLink
-              //   to={'/'+node.frontmatter.categories+node.fields.slug}
-              //   style={{
-              //     backgroundImage: `url(${node.frontmatter.img.childImageSharp.gatsbyImageData.images.fallback.src})`,
-              //   }}
-              // />
-              <ImgBox
-                style={{
-                  backgroundImage: `url(${node.frontmatter.img.childImageSharp.gatsbyImageData.images.fallback.src})`,
-                }}
-              ></ImgBox>
-              )}
+                node.frontmatter.img.childImageSharp.gatsbyImageData
+                ?
+                <ImgBox
+                  style={{
+                    backgroundImage: `url(${node.frontmatter.img.childImageSharp.gatsbyImageData.images.fallback.src})`,
+                  }}
+                ></ImgBox>
+                :
+                <ImgBox
+                  style={{
+                    backgroundImage: `url(${noImage})`,
+                  }}
+                ></ImgBox>
+              }
               <TextBox>
                 <Title>제목: {node.frontmatter.title}</Title>
                 <Category>분류: {node.frontmatter.categories}</Category>
@@ -41,8 +47,6 @@ const PostList = ({allData, pageContext}) => {
 }
 
 export default PostList
-// const StyledLink = styled(props => <Link {...props} />)`
-// `;
 const ImgBox = styled.div`
 width: 100%;
 height: 60%;
@@ -59,6 +63,14 @@ const PostBox = styled.div`
 margin: 1%;
 width: 48%;
 height: 25vh;
+@media ${device.desktop}{
+}
+@media ${device.laptop}{
+}
+@media ${device.tablet}{
+}
+@media ${device.mobile}{
+}
 `;
 const Container = styled.div`
 display: flex;
@@ -66,4 +78,12 @@ flex-direction: row;
 flex-wrap: wrap;
 width: 100%;
 height: fit-content;
+@media ${device.desktop}{
+}
+@media ${device.laptop}{
+}
+@media ${device.tablet}{
+}
+@media ${device.mobile}{
+}
 `;

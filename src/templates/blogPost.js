@@ -3,12 +3,14 @@ import { graphql } from "gatsby";
 
 import Seo from "../components/seo"
 import IndexPage from "./index";
+import PostCard from "../components/posts/postCard";
 
 const BlogPostTemplate = ({pageContext, data}) => {
+  console.log('blogPost.js data:', data)
   return (
     <IndexPage>
       <Seo title={data.site.siteMetadata.title}/>
-      <div>BlogPostTemplate</div>
+      <PostCard data={data} />
     </IndexPage>
   )
 }

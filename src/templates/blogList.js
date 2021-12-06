@@ -51,39 +51,3 @@ query blogPageQuery($skip: Int, $limit: Int) {
   }
 }
 `
-// export const pageQuery = graphql`
-//   query blogPageQuery($skip: Int!, $limit: Int!) {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     allMarkdownRemark(
-//       sort: { fields: [frontmatter___date], order: DESC }
-//       limit: $limit
-//       skip: $skip
-//     ) {
-//       edges {
-//         node {
-//           excerpt
-//           fields {
-//             slug
-//           }
-//           timeToRead
-//           frontmatter {
-//             date(formatString: "YYYY, MMM DD")
-//             title
-//             categories
-//             img {
-//               childImageSharp {
-//                 gatsbyImageData(placeholder: BLURRED,
-//                   layout: FULL_WIDTH,
-//                   formats: [AUTO, AVIF, WEBP])
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
