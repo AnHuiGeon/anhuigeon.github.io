@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const PostCard = ({ data }) => {
-  console.log('postCard data:',data)
   return (
     <Container>
       <h1>{data.markdownRemark.frontmatter.title}</h1>

@@ -17,19 +17,13 @@ const GlobalStyle = createGlobalStyle`
         --color-nav-bar: rgba(255, 255, 255, 0.7);
         --color-nav-border: rgba(200, 200, 200, 0.7);
         --color-category-button: #f2f2f2;
-        --color-background: #f2f2f2;
-        --color-post-background: #ffffff;
+        --color-background-1: #ffffff;
+        --color-background-2: #f2f2f2;
         --color-card: #ffffff;
         --color-code: #f2f2f2;
         --color-code-block: #fafafa;
         --color-code-highlight: rgba(0, 0, 0, 0.05);
         --color-code-highlight-border: rgba(0, 0, 0, 0.2);
-        --color-gray-1: #f2f2f2;
-        --color-gray-2: #e0e0e0;
-        --color-gray-3: #d1d1d1;
-        --color-gray-4: #868686;
-        --color-gray-5: #6e6e6e;
-        --color-gray-6: #696969;
         }
     
     .dark {
@@ -40,19 +34,14 @@ const GlobalStyle = createGlobalStyle`
         --color-nav-bar: rgba(29, 29, 29, 0.7);
         --color-nav-border: rgba(255, 255, 255, 0.2);
         --color-category-button: #484848;
-        --color-background: #1c1c1c;
-        --color-post-background: #1c1c1c;
+        --color-background-1: #1c1c1c;
+        --color-background-2: #292A2D;
+        // --color-side-background: #202124;
         --color-card: #2c2c2c;
         --color-code: #3a3a3a;
         --color-code-block: #242424;
         --color-code-highlight: rgba(255, 255, 255, 0.05);
         --color-code-highlight-border: rgba(255, 255, 255, 0.2);
-        --color-gray-1: #f2f2f2;
-        --color-gray-2: #e0e0e0;
-        --color-gray-3: #d1d1d1;
-        --color-gray-4: #868686;
-        --color-gray-5: #6e6e6e;
-        --color-gray-6: #696969;
     }
 
     html, body, #___gatsby, #gatsby-focus-wrapper {
@@ -64,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
     
     body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-        background-color: var(--color-post-background);
+        background-color: var(--color-background-1);
         -webkit-font-smoothing: antialiased;
         * {
             color: var(--color-text);

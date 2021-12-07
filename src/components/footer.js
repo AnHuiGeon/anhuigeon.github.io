@@ -5,7 +5,11 @@ const Footer = () => {
   return (
     <FooterBox role="contentinfo">
       <Copyright aria-label="Copyright">
-        <div>footer.js</div>
+        <div>Github Repo: 
+          <a
+          href='https://github.com/AnHuiGeon/anhuigeon.github.io'
+          >anhuigeon.github.io</a>
+        </div>
       </Copyright>
     </FooterBox>
   )
@@ -19,7 +23,7 @@ const FooterBox = styled.footer`
 	justify-content: center;
 	align-items: center;
 	height: var(--footer-height);
-	background-color: var(--color-post-background);
+	background-color: var(--color-background-1);
 `;
 
 const Copyright = styled.span`

@@ -34,7 +34,6 @@ module.exports = {
         trackingId: "G-7PSDS3S4B7",
       },
     },
-    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -48,6 +47,7 @@ module.exports = {
         ]
       }
     },
+    "gatsby-plugin-sharp",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",

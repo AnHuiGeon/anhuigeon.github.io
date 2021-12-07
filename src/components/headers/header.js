@@ -42,7 +42,7 @@ const HeadBar = styled.header`
   font-weight: 900;
   font-size: 24px;
   backdrop-filter: blur(10px);
-  background-color: var(--color-post-background);
+  background-color: var(--color-background-1);
   }
   &.scrolled {
     box-shadow: 0 4px 4px rgba(31, 35, 46, .15);

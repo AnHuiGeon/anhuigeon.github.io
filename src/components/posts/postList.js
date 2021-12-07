@@ -4,11 +4,7 @@ import styled from "styled-components";
 
 import { device } from "../../styles/device";
 
-import noImage from '../../images/huigeon.jpg'
-
 const PostList = ({allData, pageContext}) => {
-  console.log('postList.js allData:', allData)
-  console.log('postList.js pageContext:', pageContext)
   return (
     <Container>
       {allData.map(({ node }) => {
@@ -20,18 +16,11 @@ const PostList = ({allData, pageContext}) => {
               {node.frontmatter.img &&
                 node.frontmatter.img.childImageSharp &&
                 node.frontmatter.img.childImageSharp.gatsbyImageData
-                ?
-                <ImgBox
+                ?<ImgBox
                   style={{
                     backgroundImage: `url(${node.frontmatter.img.childImageSharp.gatsbyImageData.images.fallback.src})`,
-                  }}
-                ></ImgBox>
-                :
-                <ImgBox
-                  style={{
-                    backgroundImage: `url(${noImage})`,
-                  }}
-                ></ImgBox>
+                  }}></ImgBox>
+                :<ImgBox>no image</ImgBox>
               }
               <TextBox>
                 <Title>제목: {node.frontmatter.title}</Title>
@@ -49,7 +38,9 @@ const PostList = ({allData, pageContext}) => {
 export default PostList
 const ImgBox = styled.div`
 width: 100%;
-height: 60%;
+height: 65%;
+text-align: center;
+line-height: 850%;
 background-size: 100% 100%;
 background-repeat: no-repeat;
 `;
@@ -57,12 +48,13 @@ const Date = styled.div``;
 const Category = styled.div``;
 const Title = styled.div``;
 const TextBox = styled.div`
-height:40%;
+height: 35%;
+background-color: var(--color-background-2);
 `;
 const PostBox = styled.div`
 margin: 1%;
 width: 48%;
-height: 25vh;
+height: 30vh;
 @media ${device.desktop}{
 }
 @media ${device.laptop}{
@@ -78,6 +70,7 @@ flex-direction: row;
 flex-wrap: wrap;
 width: 100%;
 height: fit-content;
+margin: 1%;
 @media ${device.desktop}{
 }
 @media ${device.laptop}{

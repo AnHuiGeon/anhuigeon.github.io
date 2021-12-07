@@ -51,7 +51,7 @@ const CoverAuthorImage = styled.div`
   margin: 0 auto 10px;
   border-radius: 100%;
   overflow: hidden;
-  background-color: var(--color-post-background);
+  background-color: var(--color-background-1);
 `;
 const Img = styled.img`
   max-width: 150px;
@@ -65,16 +65,17 @@ const Img = styled.img`
   }
 `;
 const SideMenu = styled.aside`
-  min-height: 100%;
+  height: 100vh;
   width: 250px;
   top: 0;
+  position: sticky;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
   padding-top: 50px;
-  background-color: var(--color-post-background);
-  box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
+  background-color: var(--color-background-2);
+  // box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
   z-index: 1;
   transition: all .85s;
   @media ${device.desktop}{

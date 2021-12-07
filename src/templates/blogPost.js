@@ -6,7 +6,6 @@ import IndexPage from "./index";
 import PostCard from "../components/posts/postCard";
 
 const BlogPostTemplate = ({pageContext, data}) => {
-  console.log('blogPost.js data:', data)
   return (
     <IndexPage>
       <Seo title={data.site.siteMetadata.title}/>

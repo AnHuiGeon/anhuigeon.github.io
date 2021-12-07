@@ -33,7 +33,7 @@ const Container = styled.div`
 	max-width: 1024px;
 	height: 100%;
 	min-height: calc(100vh - var(--footer-height));
-	background-color: var(--color-post-background);
+	background-color: var(--color-background-1);
   @media ${device.desktop}{
   }
   @media ${device.laptop}{
