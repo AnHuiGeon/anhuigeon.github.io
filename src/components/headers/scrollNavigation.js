@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 const ScrollNavigation = ({data}) => {
   const [limit, setLimit] = useState(0)
+  console.log('data:',data,'limit:',limit)
+  useEffect(() => {
+    setLimit(document.body.offsetHeight - window.innerHeight)
+  }, [])
   useEffect(() => {
     const resizeListener = () => {
       setLimit(document.body.offsetHeight - window.innerHeight)
@@ -11,7 +15,7 @@ const ScrollNavigation = ({data}) => {
     return () => {
       window.removeEventListener('resize', resizeListener)
     }
-  }, [])
+  }, [data])
   return(
     <>
       <ProgressBar>
