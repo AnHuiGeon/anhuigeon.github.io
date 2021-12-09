@@ -47,13 +47,12 @@ const HamburgerLabel = styled.label.attrs({ htmlFor: 'menuicon' })`
   position: fixed;
   top: 10px;
   left: 10px;
-  z-index: 5;
+  z-index: 15;
   cursor: pointer;
 `;
 const HamburgerInput = styled.input.attrs({ type: 'checkbox', id: 'menuicon' })`
   display: none;
   &:checked{
-    z-index: 2;
     +${HamburgerLabel}{
       ${HamburgerSpan}{
         &:nth-child(1){

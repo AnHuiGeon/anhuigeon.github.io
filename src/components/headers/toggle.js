@@ -42,7 +42,7 @@ const ChildSpan = styled.span`
 `;
 const Switch = styled.label.attrs({ htmlFor: 'toggleTag'})`
 	position: fixed;
-	z-index: 10;
+	z-index: 15;
 	top: 15px;
 	right: 20px;
 	display: block;

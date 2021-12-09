@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const ScrollNavigation = ({data}) => {
   const [limit, setLimit] = useState(0)
-  console.log('data:',data,'limit:',limit)
   useEffect(() => {
     setLimit(document.body.offsetHeight - window.innerHeight)
   }, [])
@@ -28,15 +27,13 @@ const ScrollNavigation = ({data}) => {
 const ScrollPosition = styled.div`
   height: 4px;
   background-color: var(--color-text);
-  position: fixed;
   width: ${props => `${props.width}%`};
-  z-index: 1;
 `;
 const ProgressBar = styled.div`
   width: 100%;
   height: 4px;
   position: fixed;
-  z-index: 2;
+  z-index: 10;
 `;
 
 export default ScrollNavigation
