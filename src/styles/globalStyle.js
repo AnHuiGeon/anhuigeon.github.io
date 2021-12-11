@@ -36,7 +36,6 @@ const GlobalStyle = createGlobalStyle`
         --color-category-button: #484848;
         --color-background-1: #1c1c1c;
         --color-background-2: #292A2D;
-        // --color-side-background: #202124;
         --color-card: #2c2c2c;
         --color-code: #3a3a3a;
         --color-code-block: #242424;

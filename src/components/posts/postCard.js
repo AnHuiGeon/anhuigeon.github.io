@@ -5,8 +5,8 @@ const PostCard = ({ data }) => {
   return (
     <Container>
       <h1>{data.markdownRemark.frontmatter.title}</h1>
-      <hr/>
       <h4>{data.markdownRemark.frontmatter.date}</h4>
+      <hr/>
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
     </Container>
   )
@@ -14,5 +14,6 @@ const PostCard = ({ data }) => {
 
 const Container = styled.div`
 width: 100%;
+margin: 2%;
 `;
 export default PostCard

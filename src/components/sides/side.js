@@ -80,7 +80,8 @@ const SideMenu = styled.aside`
   transition: all .85s;
   @media ${device.desktop}{
     transform: translateX(0);
-    transition: all .0s;
+    transition: transform .0s;
+    transition: background-color 0.85s;
   }
   @media ${device.laptop}{
   }

@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 const ScrollNavigation = ({data}) => {
   const [limit, setLimit] = useState(0)
+  const resizeListener = () => {
+    setLimit(document.body.offsetHeight - window.innerHeight)
+  }
   useEffect(() => {
     setLimit(document.body.offsetHeight - window.innerHeight)
   }, [])
   useEffect(() => {
-    const resizeListener = () => {
-      setLimit(document.body.offsetHeight - window.innerHeight)
-    }
     window.addEventListener('resize', resizeListener)
     return () => {
       window.removeEventListener('resize', resizeListener)

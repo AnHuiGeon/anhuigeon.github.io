@@ -34,6 +34,8 @@ const Container = styled.div`
 	height: 100%;
 	min-height: calc(100vh - var(--footer-height));
 	background-color: var(--color-background-1);
+  transition: background-color .85s;
+	// transition: all .85s;
   @media ${device.desktop}{
   }
   @media ${device.laptop}{
