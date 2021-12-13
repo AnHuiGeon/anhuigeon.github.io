@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-// import GlobalContextProvider from '../context/GlobalContextProvider';
 import GlobalStyle from '../styles/globalStyle';
-// import themeHook from '../hooks/themeHook';
 
 import Header from './headers/header';
 import Side from './sides/side';
-// import Toggle from './headers/toggle';
 import Footer from './footer';
 import { device } from '../styles/device';
-import TestToggle from './headers/testToggle';
+import Toggle from './headers/toggle';
 
 const Layout = ({ children, data }) => {
-	// const [theme] = themeHook();
 	const [theme, setTheme] = useState(null);
-	console.log('theme:',theme)
 	useEffect(() => {
     setTheme(window.__theme);
     window.__onThemeChange = () => {
@@ -23,23 +18,13 @@ const Layout = ({ children, data }) => {
 	}, [])
 
 	return (
-		// <GlobalContextProvider.Provider value={theme}>
 		<>
 			<GlobalStyle />
 			<Header />
-			{/* <Toggle /> */}
 			{theme !== null ? (
-				<TestToggle
-				data={theme}
-				// checked={test === 'dark'}
-				// onChange={e => {
-				// 	window.__setPreferredTheme(
-				// 		e.target.checked ? 'dark' : 'light'
-				// 	)
-				// }}
-				/>
+				<Toggle data={theme} />
 			) : (
-				<div style={{height: '24px' }} />
+				<div style={{width: '24px' }} />
 			)}
 			<Container>
 				<Side data={data}/>
@@ -47,7 +32,6 @@ const Layout = ({ children, data }) => {
 			</Container>
 			<Footer />
 		</>
-		// </GlobalContextProvider.Provider>
 	);
 };
 
