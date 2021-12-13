@@ -14,6 +14,6 @@ const PostCard = ({ data }) => {
 
 const Container = styled.div`
 width: 100%;
-margin: 2%;
+margin: 1%;
 `;
 export default PostCard
