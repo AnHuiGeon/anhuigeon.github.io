@@ -1,5 +1,5 @@
 const React = require("react")
-const Index = require("./src/templates/index")
+const IndexPage = require("./src/templates/index")
 
 // Logs when the client route changes
 exports.onRouteUpdate = ({ location, prevLocation }) => {
@@ -11,5 +11,5 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
 exports.wrapPageElement = ({ element, props }) => {
   console.log('element:',element)
   console.log('props:',props)
-  return <Index {...props}>{element}</Index>
+  return <IndexPage {...props}>{element}</IndexPage>
 }

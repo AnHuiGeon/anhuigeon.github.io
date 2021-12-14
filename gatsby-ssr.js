@@ -1,5 +1,5 @@
 const React = require("react")
-const Index = require("./src/templates/index")
+const IndexPage = require("./src/templates/index")
 
 // Adds a class name to the body element
 exports.onRenderBody = ({ setBodyAttributes }, pluginOptions) => {
@@ -10,5 +10,5 @@ exports.onRenderBody = ({ setBodyAttributes }, pluginOptions) => {
 
 // Wraps every page in a component
 exports.wrapPageElement = ({ element, props }) => {
-  return <Index {...props}>{element}</Index>
+  return <IndexPage {...props}>{element}</IndexPage>
 }
