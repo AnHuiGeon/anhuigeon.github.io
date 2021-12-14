@@ -2,15 +2,17 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Seo from "../components/seo"
-import IndexPage from "./index";
+// import IndexPage from "./index";
 import PostCard from "../components/posts/postCard";
 
 const BlogPostTemplate = ({pageContext, data}) => {
   return (
-    <IndexPage>
+    <>
+    {/* <IndexPage> */}
       <Seo title={data.site.siteMetadata.title}/>
       <PostCard data={data} />
-    </IndexPage>
+    {/* </IndexPage> */}
+    </>
   )
 }
 
