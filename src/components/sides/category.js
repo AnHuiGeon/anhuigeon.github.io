@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { kebabCase } from 'lodash'
 import styled from 'styled-components'
 
-const Category = ({ data }) => {
+const Category = ({ addSideState, data }) => {
   const categoriesData = data.categoriesGroup.group
   const tagsData = data.tagsGroup.group
   let pathname = typeof window !== "undefined" ? window.location.pathname : ""
@@ -23,6 +23,9 @@ const Category = ({ data }) => {
                   {categorydata.fieldValue} ({categorydata.totalCount})
                 </Link>
                 :<Link
+                onClick={(e) => {
+                  addSideState(false)
+                }}
                 style={{textDecoration: 'none'}}
                 to={`/${kebabCase(categorydata.fieldValue)}`}
                 className="category">

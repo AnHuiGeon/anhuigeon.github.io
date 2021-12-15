@@ -6,21 +6,26 @@ import { device } from "../../styles/device"
 
 import Face from '../../images/huigeon.jpg'
 
-const Side = ({ data }) => {
+const Side = ({ sideState, addSideState, data }) => {
   const siteMetadata = data.site.siteMetadata
 
   return (
     <>
-      <SideMenu>
+      <SideMenu hamburgerClicked={sideState}>
         <About>
           <CoverAuthorImage>
-            <Link to='/'>
+            <Link
+            to='/'
+            onClick={(e) => {
+              addSideState(false)}
+            }
+            >
               <Img src={Face} alt={siteMetadata.author}/>
             </Link>
           </CoverAuthorImage>
           <AuthorName>{siteMetadata.author}</AuthorName>
           <Description>{siteMetadata.description}</Description>
-          <Category data={data} />
+          <Category addSideState={addSideState} data={data} />
         </About>
       </SideMenu>
     </>
@@ -90,9 +95,10 @@ const SideMenu = styled.aside`
     width: 100%;
     position: fixed;
     transition: all .85s;
-    &.hamburgerClicked{
-      transform: translateX(0);
-    }
+    transform: ${props => props.hamburgerClicked === true ? 'translateX(0)' : 'translateX(-125%)'}
+    // &.hamburgerClicked{
+    //   transform: translateX(0);
+    // }
   }
   @media ${device.mobile}{
   }

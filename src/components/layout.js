@@ -10,24 +10,28 @@ import Toggle from './headers/toggle';
 
 const Layout = ({ children, data }) => {
 	const [theme, setTheme] = useState(null);
+	const [sideState, setSideState] = useState(false)
 	useEffect(() => {
     setTheme(window.__theme);
     window.__onThemeChange = () => {
       setTheme(window.__theme);
     };
 	}, [])
+	const addSideState = (addState) => {
+		setSideState(addState)
+	}
 
 	return (
 		<>
 			<GlobalStyle />
-			<Header />
+			<Header sideState={sideState} addSideState={addSideState}/>
 			{theme !== null ? (
 				<Toggle data={theme} />
 			) : (
 				<div style={{width: '24px' }} />
 			)}
 			<Container>
-				<Side data={data}/>
+				<Side sideState={sideState} addSideState={addSideState} data={data}/>
 				{children}
 			</Container>
 			<Footer />

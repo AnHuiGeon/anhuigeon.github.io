@@ -5,7 +5,7 @@ import { device } from "../../styles/device";
 import ScrollNavigation from "./scrollNavigation";
 import { Link } from "gatsby";
 
-const Header = () => {
+const Header = ({sideState, addSideState}) => {
   // 모바일/태블릿환경 스크롤 이동 감지로 header에 이벤트 주입/제거
   const [isScrolled, setIsScrolled] = useState(0);
   const headerListener = () => {
@@ -21,8 +21,12 @@ const Header = () => {
     <>
       <ScrollNavigation data={isScrolled}/>
       <HeadBar className={isScrolled > 0 ? "scrolled" : undefined} aria-label="Global Navigation">
-        <HamburgerToggle />
-        <Link to='/'>header.js : HeadBar</Link>
+        <HamburgerToggle sideState={sideState} addSideState={addSideState} />
+        <Link to='/'
+        onClick={(e) => {
+          addSideState(false)
+        }}
+        >header.js : HeadBar</Link>
       </HeadBar>
     </>
     )

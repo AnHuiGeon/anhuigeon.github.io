@@ -1,17 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import hamburgerHook from '../../hooks/hamburgerHook'
 
-const HamburgerToggle = () => {
-  // checkbox 체크 감지로 scroll lock
-  const [setHamburger] = hamburgerHook()
-  const menuCheckHandler = ({target}) => {
-    setHamburger(target.checked)
-  }
+const HamburgerToggle = ({sideState, addSideState}) => {
   return (
     <>
     <HamburgerInput
-    onChange={(e) => menuCheckHandler(e)} />
+    checked={sideState}
+    onChange={(e) => {
+      addSideState(e.target.checked)}
+    }
+    />
     <HamburgerLabel>
       <HamburgerSpan></HamburgerSpan>
       <HamburgerSpan></HamburgerSpan>
