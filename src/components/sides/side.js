@@ -70,7 +70,7 @@ const Img = styled.img`
   }
 `;
 const SideMenu = styled.aside`
-  height: 100vh;
+  height: calc(100vh - var(--footer-height));
   width: 250px;
   top: 0;
   position: sticky;
@@ -80,7 +80,7 @@ const SideMenu = styled.aside`
   padding: 10px;
   padding-top: 50px;
   background-color: var(--color-background-2);
-  // box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
+  box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
   z-index: 1;
   transition: all .85s;
   @media ${device.desktop}{

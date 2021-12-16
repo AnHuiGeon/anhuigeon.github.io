@@ -10,16 +10,17 @@ import Toggle from './headers/toggle';
 
 const Layout = ({ children, data }) => {
 	const [theme, setTheme] = useState(null);
+	// Lifting State up
 	const [sideState, setSideState] = useState(false)
-	useEffect(() => {
-    setTheme(window.__theme);
-    window.__onThemeChange = () => {
-      setTheme(window.__theme);
-    };
-	}, [])
 	const addSideState = (addState) => {
 		setSideState(addState)
 	}
+	useEffect(() => {
+		setTheme(window.__theme);
+    window.__onThemeChange = () => {
+			setTheme(window.__theme);
+    };
+	}, [])
 
 	return (
 		<>
@@ -43,8 +44,7 @@ const Container = styled.div`
 	margin: 0 auto;
 	display: flex;
 	max-width: 1024px;
-	height: 100%;
-	min-height: calc(100vh - var(--footer-height));
+	height: fit-content;
 	background-color: var(--color-background-1);
   transition: background-color .85s;
 	// transition: all .85s;

@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
         --color-category-button: #f2f2f2;
         --color-background-1: #ffffff;
         --color-background-2: #f2f2f2;
+        --color-background-3: #505050;
         --color-card: #ffffff;
         --color-code: #f2f2f2;
         --color-code-block: #fafafa;
@@ -36,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
         --color-category-button: #484848;
         --color-background-1: #1c1c1c;
         --color-background-2: #292A2D;
+        --color-background-3: #505050;
         --color-card: #2c2c2c;
         --color-code: #3a3a3a;
         --color-code-block: #242424;
@@ -46,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
     html, body, #___gatsby, #gatsby-focus-wrapper {
         margin: 0 auto;
         padding: 0;
-        min-height: 100%;
+        height: 100%;
         background-color: var(--color-post-background);
     }
     

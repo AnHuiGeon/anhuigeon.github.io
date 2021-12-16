@@ -38,23 +38,35 @@ const PostList = ({allData, pageContext}) => {
 export default PostList
 const ImgBox = styled.div`
 width: 100%;
-height: 65%;
+height: 20vh;
 text-align: center;
-line-height: 850%;
+line-height: 20vh;
 background-size: 100% 100%;
 background-repeat: no-repeat;
+background-color: var(--color-background-3);
+border-radius: 10px 10px 0 0;
+color: #fff;
 `;
-const Date = styled.div``;
-const Category = styled.div``;
-const Title = styled.div``;
+const Date = styled.div`
+overflow: hidden;
+`;
+const Category = styled.div`
+overflow: hidden;
+`;
+const Title = styled.div`
+overflow: hidden;
+`;
 const TextBox = styled.div`
-height: 35%;
+overflow: hidden;
+height: 40%;
 background-color: var(--color-background-2);
+border-radius: 0 0 10px 10px;
 `;
 const PostBox = styled.div`
 margin: 1%;
 width: 48%;
-height: 30vh;
+height: 20%;
+border-collapse: separate;
 @media ${device.desktop}{
 }
 @media ${device.laptop}{
