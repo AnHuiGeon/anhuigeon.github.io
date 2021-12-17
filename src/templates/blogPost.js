@@ -2,13 +2,13 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Seo from "../components/seo"
-import PostCard from "../components/posts/postCard";
+import PostContent from "../components/posts/postContent";
 
 const BlogPostTemplate = ({pageContext, data}) => {
   return (
     <>
       <Seo title={data.site.siteMetadata.title}/>
-      <PostCard data={data} />
+      <PostContent data={data} />
     </>
   )
 }

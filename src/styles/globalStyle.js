@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
         --color-category-button: #f2f2f2;
         --color-background-1: #ffffff;
         --color-background-2: #f2f2f2;
-        --color-background-3: #505050;
+        --color-background-3: #bebebe;
         --color-card: #ffffff;
         --color-code: #f2f2f2;
         --color-code-block: #fafafa;
@@ -48,13 +48,12 @@ const GlobalStyle = createGlobalStyle`
     html, body, #___gatsby, #gatsby-focus-wrapper {
         margin: 0 auto;
         padding: 0;
-        height: 100%;
-        background-color: var(--color-post-background);
     }
     
     body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
         background-color: var(--color-background-1);
+        // transition: background-color .85s;
         -webkit-font-smoothing: antialiased;
         * {
             color: var(--color-text);

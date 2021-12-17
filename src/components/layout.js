@@ -44,7 +44,7 @@ const Container = styled.div`
 	margin: 0 auto;
 	display: flex;
 	max-width: 1024px;
-	height: fit-content;
+	height: auto;
 	background-color: var(--color-background-1);
   transition: background-color .85s;
 	// transition: all .85s;
