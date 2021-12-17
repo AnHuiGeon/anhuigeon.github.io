@@ -21,7 +21,7 @@ const ScrollNavigation = ({data}) => {
 const ScrollPosition = styled.div`
   height: 4px;
   background-color: var(--color-text);
-  width: ${props => `${props.width}%`};
+  width: ${props => `${props.width>=0?props.width:0}%`};
 `;
 const ProgressBar = styled.div`
   width: 100%;

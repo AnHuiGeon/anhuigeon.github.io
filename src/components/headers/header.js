@@ -12,6 +12,9 @@ const Header = ({sideState, addSideState}) => {
     setIsScrolled(window.pageYOffset);
   };
   useEffect(() => {
+    setIsScrolled(window.pageYOffset)
+  }, [])
+  useEffect(() => {
     window.addEventListener("scroll", headerListener);
     return () => {
       window.removeEventListener("scroll", headerListener)
