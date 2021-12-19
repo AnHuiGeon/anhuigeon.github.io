@@ -76,5 +76,7 @@ width: 48%;
 @media ${device.tablet}{
 }
 @media ${device.mobile}{
+  margin: 1%;
+  width: 98%;
 }
 `;

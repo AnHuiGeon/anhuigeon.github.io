@@ -12,7 +12,7 @@ const Category = ({ addSideState, data }) => {
   return (
     <article>
       <section>
-        <ul>
+        <Ul>
           {categoriesData.map((categorydata) => (
             <List key={categorydata.fieldValue}>
               {urlPathName === categorydata.fieldValue
@@ -49,7 +49,7 @@ const Category = ({ addSideState, data }) => {
             </Link>
             }
           </List>
-        </ul>
+        </Ul>
       </section>
     </article>
   )
@@ -57,5 +57,8 @@ const Category = ({ addSideState, data }) => {
 
 const List = styled.li`
   list-style: none;
+`;
+const Ul = styled.ul`
+  padding: 0;
 `;
 export default Category
