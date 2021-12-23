@@ -22,6 +22,7 @@ const ScrollPosition = styled.div`
   height: 4px;
   background-color: var(--color-text);
   width: ${props => `${props.width>=0?props.width:0}%`};
+  transition: width .35s;
 `;
 const ProgressBar = styled.div`
   width: 100%;
