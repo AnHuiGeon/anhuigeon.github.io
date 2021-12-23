@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { device } from "../../styles/device";
 
 const ScrollNavigation = ({data}) => {
   const [limit, setLimit] = useState(0)
@@ -22,7 +23,16 @@ const ScrollPosition = styled.div`
   height: 4px;
   background-color: var(--color-text);
   width: ${props => `${props.width>=0?props.width:0}%`};
-  transition: width .35s;
+  transition: width .3s;
+  @media ${device.desktop}{
+  }
+  @media ${device.laptop}{
+  }
+  @media ${device.tablet}{
+    transition: none;
+  }
+  @media ${device.mobile}{
+  }
 `;
 const ProgressBar = styled.div`
   width: 100%;
