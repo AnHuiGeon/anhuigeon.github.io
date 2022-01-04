@@ -69,14 +69,4 @@ width: 48%;
     transform: scale(1.05);
   }
 }
-@media ${device.desktop}{
-}
-@media ${device.laptop}{
-}
-@media ${device.tablet}{
-}
-@media ${device.mobile}{
-  margin: 1%;
-  width: 98%;
-}
 `;
