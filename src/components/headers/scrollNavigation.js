@@ -22,7 +22,7 @@ const ScrollNavigation = ({data}) => {
 const ScrollPosition = styled.div`
   height: 4px;
   background-color: var(--color-text);
-  width: ${props => `${ props.width >= 0 ? props.width : 0 } %`};
+  width: ${props => `${props.width>=0?props.width:0}%`};
   transition: width .3s;
   @media ${device.desktop}{
   }
