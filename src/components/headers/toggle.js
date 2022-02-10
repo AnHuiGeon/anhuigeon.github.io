@@ -5,15 +5,14 @@ const Toggle = (data) => {
 
 	return (
 		<>
-		<Switch>
+			<Switch />
 			<ChildInput
-        checked={data.data === 'dark'}
+				checked={data.data === 'dark'}
 				onChange={e => window.__setPreferredTheme(
 					e.target.checked?'dark':'light'
 				)}
 			/>
 			<ChildSpan />
-		</Switch>
 		</>
 	)
 };
