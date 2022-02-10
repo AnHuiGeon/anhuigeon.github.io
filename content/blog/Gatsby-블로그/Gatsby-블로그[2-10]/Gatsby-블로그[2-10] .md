@@ -17,8 +17,8 @@ cmd창을 열고 `npm init gatsby` 명령어를 입력하여 자신에게 필요
 
 <br/>
 
-````
-  ```bash
+git bash
+```bash
   echo "# anhuigeon.github.io" >> README.md
   git init
   git add README.md
@@ -26,8 +26,7 @@ cmd창을 열고 `npm init gatsby` 명령어를 입력하여 자신에게 필요
   git branch -M main
   git remote add origin [레포지터리 URL]
   git push -u origin main
-  ```
-````
+```
 
 <br/>
 
@@ -55,77 +54,116 @@ Start commit 하면 아래와 같이 .yml파일이 생성됩니다.
 
 다음으로는 git bash에서 pull하여 .yml 파일이 추가된 것을 확인하고 여러 작업을 한 뒤 push 하고 다시 git bash로 이동하여 아래의 명령어를 입력합니다.
 
+git bash
 ```bash
-git branch dev
-git checkout dev
-git pull origin main
-code . -> vscode가 열립니다.
+  git branch dev
+  git checkout dev
+  git pull origin main
+  code . -> vscode가 열립니다.
 ```
 
 열린 vscode에 가보면 .github/workflows 폴더에 main.yml파일이 생성 된 것을 확인할 수 있습니다.
 이제 메인 화면을 보여주는 index.js파일을 수정하고, main.yml을 본인에게 필요한 명령어를 입력해줍니다.
 
+index.js
+
 ```javascript
-import * as React from "react"
+  import * as React from "react"
 
-const IndexPage = () => {
-  return (
-    <div>
-      index.js
-    </div>
-  )
-}
+  const IndexPage = () => {
+    return (
+      <div>
+        index.js
+      </div>
+    )
+  }
 
-export default IndexPage
+  export default IndexPage
+```
+```js
+  import * as React from "react"
+
+  const IndexPage = () => {
+    return (
+      <div>
+        index.js
+      </div>
+    )
+  }
+
+  export default IndexPage
+```
+```jsx
+  import * as React from "react"
+
+  const IndexPage = () => {
+    return (
+      <div>
+        index.js
+      </div>
+    )
+  }
+
+  export default IndexPage
 ```
 
-```bash
-name: gatsby deploy
+<br/>
 
-on:
-  push:
-    branches:
-      - dev
+main.yml
+```yml
+  name: gatsby deploy
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
+  on:
+    push:
+      branches:
+        - dev
 
-      - name: Cache node_modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{runner.OS}}-build-${{hashFiles('**/yarn.lock')}}
-          restore-keys: |
-            ${{ runner.OS }}-build-${{ runner.OS }}-
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - name: Setup Node
+          uses: actions/setup-node@v1
+          with:
+            node-version: '14.x'
 
-      - name: Install dependencies
-        run: yarn install --prod --pure-lockfile
-        
-      - name: Build
-        run: yarn build --prefix-paths
-        env:
-          NODE_ENV: production
-      - uses: peaceiris/actions-gh-pages@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: main
-          PUBLISH_DIR: ./public
+        - name: Cache node_modules
+          uses: actions/cache@v1
+          with:
+            path: node_modules
+            key: ${{runner.OS}}-build-${{hashFiles('**/yarn.lock')}}
+            restore-keys: |
+              ${{ runner.OS }}-build-${{ runner.OS }}-
+
+        - name: Install dependencies
+          run: yarn install --prod --pure-lockfile
+          
+        - name: Build
+          run: yarn build --prefix-paths
+          env:
+            NODE_ENV: production
+        - uses: peaceiris/actions-gh-pages@v2
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            PUBLISH_BRANCH: main
+            PUBLISH_DIR: ./public
 ```
+
+<br/>
 
 다시 git bash로 이동하여 아래의 명령어를 입력하면 github action에서 빌드를 수행합니다.
 
+<br/>
+
+git bash
 ```bash
-git add .
-git commit -m '커밋 내용'
-git push -u origin dev
+  git add .
+  git commit -m '커밋 내용'
+  git push -u origin dev
 ```
+
+<br/>
 
 ![GatsbyBlogImage2](./gatsby-blog7.png)
 

@@ -1,3 +1,5 @@
-import customWrapPageElement from './wrapPageElement' 
+import customWrapPageElement from './wrapPageElement'
+
+require("prismjs/themes/prism-okaidia.css");
 
 export const wrapPageElement = customWrapPageElement
