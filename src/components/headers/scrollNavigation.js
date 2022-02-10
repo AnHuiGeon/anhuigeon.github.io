@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { device } from "../../styles/device";
 
 const ScrollNavigation = ({data}) => {
-  return (
-    <>
-      <ProgressBar>
-        <ScrollPosition width={isNaN(data/(document.body.offsetHeight - window.innerHeight))?0:parseInt((data/(document.body.offsetHeight - window.innerHeight))*100)} />
-      </ProgressBar>
-    </>
-  )
+  if (typeof window !== undefined){
+    return(
+      <>
+        <ProgressBar>
+          <ScrollPosition width={isNaN(data/(document.body.offsetHeight - window.innerHeight))?0:parseInt((data/(document.body.offsetHeight - window.innerHeight))*100)} />
+        </ProgressBar>
+      </>
+    )
+  } else {
+    return(
+      <>
+        <ProgressBar>
+          <ScrollPosition width={0} />
+        </ProgressBar>
+      </>)
+  }
   // const [limit, setLimit] = useState(0)
   // useEffect(() => {
   //   setLimit(document.body.offsetHeight - window.innerHeight)
