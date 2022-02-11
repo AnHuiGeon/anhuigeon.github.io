@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { device } from "../../styles/device";
 
 const ScrollNavigation = ({data}) => {
-  if (typeof window !== undefined){
+  if (typeof window !== 'undefined'){
     return(
       <>
         <ProgressBar>
