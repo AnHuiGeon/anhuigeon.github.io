@@ -18,6 +18,8 @@ const Toggle = (data) => {
 };
 const ChildSpan = styled.span`
 	position: fixed;
+	top: 15px;
+	right: 20px;
 	cursor: pointer;
 	width: 50px;
 	height: 20px;
