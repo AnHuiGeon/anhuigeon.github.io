@@ -41,6 +41,7 @@ const ChildSpan = styled.span`
 	}
 `;
 const ChildInput = styled.input.attrs({ type: 'checkbox', id: 'toggleTag' })`
+	display: none;
   opacity: 0;
   width: 0;
   height: 0;
