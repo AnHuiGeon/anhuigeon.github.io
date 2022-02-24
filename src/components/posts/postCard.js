@@ -29,36 +29,37 @@ const PostCard = ({node}) => {
 
 export default PostCard
 const ImgContent = styled.div`
-width: 100%;
-height: 20vh;
-text-align: center;
-line-height: 20vh;
-background-size: 101% 100%;
-background-repeat: no-repeat;
-background-color: var(--color-background-3);
-color: var(--color-text);
-transition: .3s;
+  width: 100%;
+  height: 20vh;
+  text-align: center;
+  line-height: 20vh;
+  background-size: 101% 100%;
+  background-repeat: no-repeat;
+  background-color: var(--color-background-3);
+  color: var(--color-text);
+  transition: .3s;
 `;
 const ImgBox = styled.div`
-overflow: hidden;
-transition: 0.3s;
+  overflow: hidden;
+  transition: 0.3s;
 `;
 const Texts = styled.div`
-padding: 1% 1% 0 1%;
-overflow: hidden;
-white-space: nowrap;
-text-overflow: ellipsis;
+  padding: 1% 1% 0 1%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 const TextBox = styled.div`
-padding: 1%;
-background-color: var(--color-background-2);
+  padding: 1%;
+  background-color: var(--color-background-2);
 `;
 const PostBox = styled.div`
-border-radius: 5%;
-overflow: hidden;
-margin: 1%;
-width: 48%;
-&:hover{
+  border-radius: 5%;
+  overflow: hidden;
+  margin: 1%;
+  width: 48%;
+  height: 30%;
+  &:hover{
     ${ImgBox} {
       z-index: 10;
       opacity: 0.8;

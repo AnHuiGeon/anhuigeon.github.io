@@ -16,18 +16,18 @@ const PostList = ({allData, pageContext}) => {
 
 export default PostList
 const Container = styled.div`
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-width: 100%;
-height: fit-content;
-margin: 1%;
-@media ${device.desktop}{
-}
-@media ${device.laptop}{
-}
-@media ${device.tablet}{
-}
-@media ${device.mobile}{
-}
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 98%;
+  height: fit-content;
+  margin: 1%;
+  @media ${device.desktop}{
+  }
+  @media ${device.laptop}{
+  }
+  @media ${device.tablet}{
+  }
+  @media ${device.mobile}{
+  }
 `;

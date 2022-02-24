@@ -13,7 +13,7 @@ const PostContent = ({ data }) => {
 }
 
 const Container = styled.div`
-width: 100%;
-margin: 1%;
+  width: 96%;
+  margin: 2%;
 `;
 export default PostContent

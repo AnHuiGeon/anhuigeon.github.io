@@ -5,32 +5,32 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-return graphql(
-`{
-  allMarkdownRemark(
-    sort: {fields: [frontmatter___date], order: DESC}
-    limit: 1000
-  ) {
-    edges {
-      node {
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          tags
-          categories
-          img {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+  return graphql(`
+  {
+    allMarkdownRemark(
+      sort: {fields: [frontmatter___date], order: DESC}
+      limit: 1000
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            tags
+            categories
+            img {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              }
             }
           }
         }
       }
     }
   }
-}
-`
+  `
   ).then(result => {
     if (result.errors) {
       throw result.errors
