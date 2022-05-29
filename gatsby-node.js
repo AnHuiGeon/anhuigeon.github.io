@@ -37,11 +37,11 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // posts pages.
-    const posts = result.data.allMarkdownRemark.edges
+    const allPosts = result.data.allMarkdownRemark.edges
 
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+    allPosts.forEach((post, index) => {
+      const previous = index === allPosts.length - 1 ? null : allPosts[index + 1].node
+      const next = index === 0 ? null : allPosts[index - 1].node
 
       createPage({
         path: `/${_.kebabCase(post.node.frontmatter.categories)}`+post.node.fields.slug,
@@ -54,9 +54,9 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
-    // post list pages
+    // all post list pages
     const postsPerPage = 10
-    const numPages = Math.ceil(posts.length / postsPerPage)
+    const numPages = Math.ceil(allPosts.length / postsPerPage)
 
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
@@ -71,24 +71,62 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
-    // create Categories pages
-    let categories = [];
-    _.each(posts, edge => {
+    // Create Categories list
+    let categories = {};
+    _.each(allPosts, edge => {
       if (_.get(edge, 'node.frontmatter.categories')) {
-        categories = categories.concat(edge.node.frontmatter.categories);
+        if(! categories[edge.node.frontmatter.categories]){
+          categories[edge.node.frontmatter.categories] = {counter:1}
+        }else{
+          categories[edge.node.frontmatter.categories].counter += 1
+        }
+        if(! categories[edge.node.frontmatter.categories]["name"]){
+          categories[edge.node.frontmatter.categories]["name"] = edge.node.frontmatter.categories
+        }
       }
     });
-    categories = _.uniq(categories);
+
+    // Create Categories numPages
+    _.each(categories, category => {
+      category["numPages"] = Math.ceil(category.counter / postsPerPage)
+    })
+
     // Make categories pages
-    categories.forEach(category => {
-      createPage({
-        path: `/${_.kebabCase(category)}/`,
-        component: path.resolve('./src/templates/categoryList.js'),
-        context: {
-          category,
-        }
+    _.each(categories, category => {
+      Array.from({ length: category.numPages }).forEach((el, i) => {
+        createPage({
+          path: i === 0 ? `/${_.kebabCase(category.name)}/` : `/${_.kebabCase(category.name)}/${i + 1}`,
+          component: path.resolve('./src/templates/categoryList.js'),
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages: category.numPages,
+            currentPage: i + 1,
+            category: category.name,
+          }
+        })
       })
     })
+
+    // // create Categories pages
+    // let categories = [];
+    // _.each(allPosts, edge => {
+    //   if (_.get(edge, 'node.frontmatter.categories')) {
+    //     categories = categories.concat(edge.node.frontmatter.categories);
+    //   }
+    // });
+    // categories = _.uniq(categories);
+    // // Make categories pages
+    // categories.forEach(category => {
+    //   createPage({
+    //     path: `/${_.kebabCase(category)}/`,
+    //     component: path.resolve('./src/templates/categoryList.js'),
+    //     context: {
+    //       category,
+    //     }
+    //   })
+    // })
+
   });
 }
 

@@ -53,7 +53,6 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
         background-color: var(--color-background-1);
-        // transition: background-color .85s;
         -webkit-font-smoothing: antialiased;
         * {
             color: var(--color-text);

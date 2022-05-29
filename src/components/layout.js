@@ -47,7 +47,6 @@ const Container = styled.div`
 	height: auto;
 	background-color: var(--color-background-1);
   transition: background-color .85s;
-	// transition: all .85s;
   @media ${device.desktop}{
   }
   @media ${device.laptop}{

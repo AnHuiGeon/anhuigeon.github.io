@@ -4,6 +4,8 @@ import { kebabCase } from 'lodash'
 import styled from 'styled-components'
 
 const Category = ({ addSideState, data }) => {
+  // addSideState => setSideState(true/false) hooks
+  // data => categoriesGroup, tagsGroup, siteMetadata
   const categoriesData = data.categoriesGroup.group
   const tagsData = data.tagsGroup.group
   let pathname = typeof window !== "undefined" ? window.location.pathname : ""
@@ -18,7 +20,7 @@ const Category = ({ addSideState, data }) => {
               {urlPathName === categorydata.fieldValue
                 ?<Link
                 style={{fontWeight: "900", textDecoration: 'none'}}
-                to={`/${kebabCase(categorydata.fieldValue)}`}
+                to={`/${kebabCase(categorydata.fieldValue)}/`}
                 className="category">
                   {categorydata.fieldValue} ({categorydata.totalCount})
                 </Link>
@@ -27,7 +29,7 @@ const Category = ({ addSideState, data }) => {
                   addSideState(false)
                 }}
                 style={{textDecoration: 'none'}}
-                to={`/${kebabCase(categorydata.fieldValue)}`}
+                to={`/${kebabCase(categorydata.fieldValue)}/`}
                 className="category">
                   {categorydata.fieldValue} ({categorydata.totalCount})
                 </Link>
@@ -38,11 +40,11 @@ const Category = ({ addSideState, data }) => {
             {urlPathName === "tags"
             ?<Link
             style={{fontWeight: "900", textDecoration: 'none'}}
-            to="/tags"
+            to="/tags/"
             >
               AllTags ({tagsData.length})
             </Link>
-            :<Link to="/tags"
+            :<Link to="/tags/"
             style={{textDecoration: 'none'}}
             >
               AllTags ({tagsData.length})

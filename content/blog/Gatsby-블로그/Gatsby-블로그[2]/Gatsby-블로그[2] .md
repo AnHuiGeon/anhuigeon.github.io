@@ -180,6 +180,7 @@ git bash
 <br/>
 
 참고
-github action 사용법 - [https://zzsza.github.io/development/2020/06/06/github-action/](https://zzsza.github.io/development/2020/06/06/github-action/)
+
+[github action 사용법](https://zzsza.github.io/development/2020/06/06/github-action/)
 
 <br/>

@@ -86,7 +86,7 @@ const SideMenu = styled.aside`
   @media ${device.desktop}{
     transform: translateX(0);
     transition: transform .0s;
-    transition: background-color 0.85s;
+    transition: background-color .85s;
   }
   @media ${device.laptop}{
   }
@@ -94,11 +94,8 @@ const SideMenu = styled.aside`
     transform: translateX(-125%);
     width: 100%;
     position: fixed;
-    transition: all .85s;
+    transition: transform .85s;
     transform: ${props => props.hamburgerClicked === true ? 'translateX(0)' : 'translateX(-125%)'}
-    // &.hamburgerClicked{
-    //   transform: translateX(0);
-    // }
   }
   @media ${device.mobile}{
   }

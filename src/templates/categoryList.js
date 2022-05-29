@@ -16,15 +16,16 @@ const CategoryList = ({ pageContext, data }) => {
 export default CategoryList
 
 export const pageQuery = graphql`
-query CategoryPostBySlug($category: String) {
+query CategoryPostBySlug($category: String, $skip: Int, $limit: Int) {
   site {
     siteMetadata {
       title
     }
   }
   allMarkdownRemark(
-    limit: 2000
     sort: { fields: [frontmatter___date], order: DESC }
+    limit: $limit
+    skip: $skip
     filter: { frontmatter: { categories: { in: [$category] } } }
   ) {
     totalCount
